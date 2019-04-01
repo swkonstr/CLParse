@@ -8,7 +8,6 @@ import time
 import random
 
 
-
 OUTPUT_FILE = 'F:/OneDrive/Python/HackerRank/bs4_test_log.txt'
 MAIN_URL = 'https://www.craigslist.org/about/sites'
 JOB_SUFFIX = 'search/sof'
@@ -87,9 +86,6 @@ def GetJobs(url):
                 jobs_list.append(job)
         fl = soup.find_all('div', 'paginator buttongroup firstpage lastpage')
         l = soup.find_all('div', 'paginator buttongroup lastpage')
-        #random_pause = random.randint(0, 1)
-        #print('Loading job links. Pause {random_pause} sec')
-        #time.sleep(random_pause)
         if fl or l:
             lastpage = False
         else:
@@ -107,9 +103,6 @@ def FillDescription(jobs, town):
         section_text = section.get_text()
         job.description = section_text
         job.town = town
-        #random_pause = random.randint(0, 1)
-        #print('Job descriptions loading. Pause {random_pause} sec')
-        #time.sleep(random_pause)
     print(f'{len(jobs)} job descriptions loaded.')
     return jobs
 
@@ -137,11 +130,6 @@ def SaveTowns(town_links_dict):
 
 
 if __name__ == '__main__':
-    #soup = GetSoup(MAIN_URL)
-    #town_links_dict = GetTownLinks(soup)
-    #SaveTowns(town_links_dict)
-    #town_links_dict = {}
-    #town_links_dict.update([('charleston', 'https://charleston.craigslist.org/')])
     town_links_dict = LoadTownLinks()
     for town in town_links_dict:
         print(f'Parse jobs in {town} : {town_links_dict[town]}')
