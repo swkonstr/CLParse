@@ -10,7 +10,6 @@ import random
 
 
 OUTPUT_FILE = 'F:/OneDrive/Python/HackerRank/bs4_test_log.txt'
-# OUTPUT_FILE = 'C:/Users/swkon/OneDrive/Python/HackerRank/bs4_test_log.txt'
 MAIN_URL = 'https://www.craigslist.org/about/sites'
 JOB_SUFFIX = 'search/sof'
 JOB_SUFFIX2 = 'search/egr'
